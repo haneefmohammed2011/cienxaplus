@@ -7,63 +7,68 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header and Navigation -->
+    <!-- Navigation Bar -->
     <header>
         <div class="navbar">
-            <div class="logo">
-                <img src="assets/logo.png" alt="Cinexa Plus Logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">TV Shows</a></li>
-                <li><a href="#">Movies</a></li>
-                <li><a href="#">Series</a></li>
-                <li><a href="#">Upcoming</a></li>
-            </ul>
+            <div class="logo">Cinexa Plus</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">TV Shows</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">Series</a></li>
+                    <li><a href="#">Upcoming</a></li>
+                </ul>
+            </nav>
             <div class="auth-buttons">
-                <button class="signup-btn">Sign Up</button>
-                <button class="signin-btn">Sign In</button>
+                <button class="sign-up">Sign Up</button>
+                <button class="sign-in">Sign In</button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Banner Section -->
-    <section class="hero-banner">
-        <div class="banner-content">
-            <img src="assets/banner.jpg" alt="Hero Banner" class="banner-image">
-            <div class="banner-overlay">
-                <div class="show-details">
-                    <img src="assets/logo.png" alt="One Piece" class="show-logo">
-                    <p class="show-description">
-                        With a straw hat and an eccentric crew, Monkey D. Luffy embarks on an epic voyage in the live-action adaptation of this popular manga to search for treasure.
-                    </p>
-                    <div class="buttons">
-                        <button class="play-btn">Play Now</button>
-                        <button class="wishlist-btn">+ My Wishlist</button>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <img src="assets/logo.png" alt="One Piece" class="show-logo">
+            <p class="description">
+                With a straw hat and an eccentric crew, young pirate Monkey D. Luffy embarks on an epic voyage in the live-action adaptation of this popular manga to search for treasure.
+            </p>
+            <div class="buttons">
+                <button class="play-now">▶ Play Now</button>
+                <button class="wishlist">+ My Wishlist</button>
+            </div>
+            <div class="cast">
+                <h3>Starring:</h3>
+                <div class="cast-icons">
+                    <img src="assets/cast/cast1.png" alt="Cast 1">
+                    <img src="assets/cast/cast2.png" alt="Cast 2">
+                    <img src="assets/cast/cast3.png" alt="Cast 3">
+                    <img src="assets/cast/cast4.png" alt="Cast 4">
+                    <img src="assets/cast/cast5.png" alt="Cast 5">
+                    <span class="view-all">View All</span>
                 </div>
             </div>
+            <div class="top-10-badge">TOP 10</div>
         </div>
     </section>
 
-    <!-- Episode Section -->
+    <!-- Episodes Section -->
     <section class="episodes">
         <h2>Episodes</h2>
-        <div class="episode-list">
-            <div class="episode-card">
-                <img src="assets/thumbnails/thumb1.jpg" alt="Episode 1">
-                <p>Episode 1: Romance Down</p>
-                <span>55m</span>
+        <div class="episode-cards">
+            <div class="card">
+                <img src="assets/thumbnails/ep1.jpg" alt="Episode 1">
+                <p>01: Romance Dawn</p>
             </div>
-            <div class="episode-card">
-                <img src="assets/thumbnails/thumb2.jpg" alt="Episode 2">
-                <p>Episode 2: Man in a Straw Hat</p>
-                <span>55m</span>
+            <div class="card">
+                <img src="assets/thumbnails/ep2.jpg" alt="Episode 2">
+                <p>02: Man in a Straw Hat</p>
             </div>
-            <div class="episode-card">
-                <img src="assets/thumbnails/thumb3.jpg" alt="Episode 3">
-                <p>Episode 3: Pirate Challenge</p>
-                <span>58m</span>
+            <div class="card">
+                <img src="assets/thumbnails/ep3.jpg" alt="Episode 3">
+                <p>03: Don't Stop</p>
             </div>
         </div>
     </section>
@@ -71,20 +76,13 @@
     <!-- Trending Section -->
     <section class="trending">
         <h2>Trending Now</h2>
-        <div class="trending-list">
-            <div class="trending-item">
-                <img src="assets/thumbnails/thumb1.jpg" alt="Trending Show">
-            </div>
-            <div class="trending-item">
-                <img src="assets/thumbnails/thumb2.jpg" alt="Trending Show">
-            </div>
-            <div class="trending-item">
-                <img src="assets/thumbnails/thumb3.jpg" alt="Trending Show">
-            </div>
+        <div class="scroll-cards">
+            <img src="assets/thumbnails/trend1.jpg" alt="Trending 1">
+            <img src="assets/thumbnails/trend2.jpg" alt="Trending 2">
+            <img src="assets/thumbnails/trend3.jpg" alt="Trending 3">
+            <img src="assets/thumbnails/trend4.jpg" alt="Trending 4">
         </div>
     </section>
-
-    <!-- Scripts -->
-    <script src="script.js"></script>
 </body>
 </html>
+
