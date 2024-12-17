@@ -1,0 +1,144 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    width: 120px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.auth-buttons .signup-btn,
+.auth-buttons .signin-btn {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.signup-btn {
+    background: red;
+    color: white;
+    border-radius: 5px;
+}
+
+.signin-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+/* Hero Banner */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+}
+
+.banner-content .banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-overlay {
+    position: absolute;
+    bottom: 20%;
+    left: 50px;
+    max-width: 500px;
+}
+
+.show-logo {
+    width: 200px;
+}
+
+.show-description {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.buttons .play-btn,
+.buttons .wishlist-btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.play-btn {
+    background: red;
+    color: white;
+    border-radius: 5px;
+}
+
+.wishlist-btn {
+    background: gray;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Episodes Section */
+.episodes, .trending {
+    padding: 20px 50px;
+}
+
+.episodes h2, .trending h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.episode-list, .trending-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+.episode-card img, .trending-item img {
+    width: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.episode-card p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.episode-card span {
+    color: gray;
+    font-size: 12px;
+}
