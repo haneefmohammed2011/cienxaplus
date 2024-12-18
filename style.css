@@ -34,10 +34,6 @@ body {
   border-radius: 5px;
 }
 
-.auth button:hover, .play-btn:hover, .wishlist-btn:hover {
-  opacity: 0.9;
-}
-
 .auth .btn {
   background: #ff3c3c;
   color: #fff;
@@ -53,16 +49,44 @@ body {
 /* Hero Section */
 .hero {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #111;
   padding: 40px 30px;
+  gap: 20px;
+}
+
+.hero-img {
   position: relative;
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.hero-img img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.top-10 {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ff3c3c;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 .hero-content {
-  flex: 1;
+  max-width: 600px;
 }
 
 .hero-title {
-  width: 300px;
+  font-size: 3rem;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
@@ -94,29 +118,11 @@ body {
   width: 50px;
   border-radius: 50%;
   margin-right: 10px;
+  border: 2px solid #333;
 }
 
-.hero-img {
-  position: relative;
-}
-
-.hero-img img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.top-10 {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #ff3c3c;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-/* Episode Carousel */
-.episodes, .content-carousel {
+/* Content Carousel */
+.content-carousel {
   padding: 20px 30px;
 }
 
@@ -126,18 +132,12 @@ body {
   gap: 15px;
 }
 
-.episode img, .carousel img {
+.carousel img {
   width: 200px;
   border-radius: 10px;
   cursor: pointer;
 }
 
-.episode p {
-  text-align: center;
-  margin-top: 5px;
-}
-
-/* Scrollbar */
 .carousel::-webkit-scrollbar {
   display: none;
 }
