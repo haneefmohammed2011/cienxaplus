@@ -1,86 +1,143 @@
-/* General Styles */
-body {
+/* General Reset */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
-  background-color: #111;
+}
+
+body {
+  background: #000;
   color: #fff;
 }
 
 /* Navbar */
-header {
-  background: #222;
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 30px;
+  background: rgba(0, 0, 0, 0.8);
 }
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+
+.navbar nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
 }
-.nav-links li {
+
+.auth button, .play-btn, .wishlist-btn {
+  padding: 8px 15px;
+  margin-left: 10px;
+  border: none;
   cursor: pointer;
+  border-radius: 5px;
 }
-.auth-buttons button {
-  background: red;
+
+.auth button:hover, .play-btn:hover, .wishlist-btn:hover {
+  opacity: 0.9;
+}
+
+.auth .btn {
+  background: #ff3c3c;
+  color: #fff;
+}
+
+#lang {
+  background: transparent;
   color: #fff;
   border: none;
-  padding: 8px 12px;
   cursor: pointer;
 }
 
-/* Banner */
-.banner {
-  background: url('banner-image.jpg') no-repeat center center/cover;
-  height: 400px;
+/* Hero Section */
+.hero {
+  display: flex;
+  padding: 40px 30px;
   position: relative;
-  display: flex;
-  align-items: center;
-  padding: 20px;
-}
-.banner-content {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 10px;
-}
-.banner h1 {
-  font-size: 3rem;
-  margin: 0;
-}
-.banner p {
-  margin: 10px 0;
-}
-.buttons button {
-  background: red;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  cursor: pointer;
 }
 
-/* Episodes */
-.episodes {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-}
-.episode-item img {
-  width: 200px;
-  border-radius: 10px;
-}
-.episode-item p {
-  margin: 10px 0;
+.hero-content {
+  flex: 1;
 }
 
-/* Other Shows */
-.other-shows {
+.hero-title {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.rating, .description {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.actions {
   display: flex;
   gap: 10px;
-  padding: 20px;
 }
-.other-shows img {
-  width: 150px;
+
+.play-btn {
+  background: #ff3c3c;
+  color: #fff;
+}
+
+.wishlist-btn {
+  background: #333;
+  color: #fff;
+}
+
+.starring {
+  margin-top: 20px;
+}
+
+.avatars img {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.hero-img {
+  position: relative;
+}
+
+.hero-img img {
+  width: 100%;
   border-radius: 10px;
+}
+
+.top-10 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff3c3c;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Episode Carousel */
+.episodes, .content-carousel {
+  padding: 20px 30px;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+}
+
+.episode img, .carousel img {
+  width: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.episode p {
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* Scrollbar */
+.carousel::-webkit-scrollbar {
+  display: none;
 }
