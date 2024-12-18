@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TV Show Design</title>
+  <title>One Piece Showcase</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Navigation Bar -->
   <header class="navbar">
-    <div class="logo"> <i class="fa fa-diamond"></i> </div>
+    <div class="logo"><i class="fa fa-diamond"></i></div>
     <nav>
       <a href="#">Home</a>
       <a href="#">TV Shows</a>
@@ -19,78 +19,53 @@
       <a href="#">Upcoming</a>
     </nav>
     <div class="auth">
-      <select id="lang">
+      <select>
         <option>English</option>
-        <option>Spanish</option>
       </select>
-      <button class="btn">Sign Up</button>
-      <button class="btn">Sign In</button>
+      <button>Sign Up</button>
+      <button>Sign In</button>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <img src="https://iili.io/2wAbD3Q.png" alt="One Piece Logo" class="hero-title">
-      <p class="rating">
-        <span>98% Likes</span> | 2023 | 16+ | Action, Adventure, TV Shows
-      </p>
-      <p class="description">
-        With a straw hat and an eccentric crew, young pirate Monkey D. Luffy embarks on an epic voyage in the live-action adaptation of this popular manga to search for treasure.
-      </p>
-      <div class="actions">
-        <button class="play-btn">▶ Play Now</button>
-        <button class="wishlist-btn">+ My Wishlist</button>
-      </div>
-      <div class="starring">
-        <p>STARRING:</p>
-        <div class="avatars">
-          <img src="avatar1.jpg" alt="actor">
-          <img src="avatar2.jpg" alt="actor">
-          <img src="avatar3.jpg" alt="actor">
-          <img src="avatar4.jpg" alt="actor">
-          <img src="avatar5.jpg" alt="actor">
-          <img src="avatar6.jpg" alt="actor">
+    <div class="hero-container">
+      <img src="https://iili.io/2wAbD3Q.png" alt="One Piece" class="hero-img">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">ONE PIECE</h1>
+        <p class="stats">98% Likes | 2023 | 16+ | Action, Adventure, TV Shows</p>
+        <p class="description">
+          With a straw hat and an eccentric crew, young pirate Monkey D. Luffy embarks on an epic voyage in the live-action adaptation of this popular manga to search for treasure.
+        </p>
+        <div class="buttons">
+          <button class="play-now">▶ Play Now</button>
+          <button class="wishlist">+ My Wishlist</button>
+        </div>
+        <div class="cast">
+          <span>STARRING:</span>
+          <div class="avatars">
+            <div class="avatar"></div>
+            <div class="avatar"></div>
+            <div class="avatar"></div>
+            <div class="avatar"></div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="hero-img">
-      <img src="hero-banner.jpg" alt="One Piece Cast">
-      <div class="top-10">Top 10</div>
+      <div class="top-10">TOP 10</div>
     </div>
   </section>
 
-  <!-- Episode Carousel -->
-  <section class="episodes">
-    <h3>EPISODES:</h3>
-    <div class="carousel">
-      <div class="episode">
-        <img src="episode1.jpg" alt="Episode 1">
-        <p>ROMANCE DOWN</p>
-      </div>
-      <div class="episode">
-        <img src="episode2.jpg" alt="Episode 2">
-        <p>MAN IN A STRAW HAT</p>
-      </div>
-      <div class="episode">
-        <img src="episode3.jpg" alt="Episode 3">
-        <p>DON...</p>
-      </div>
+  <!-- Carousel Section -->
+  <section class="carousel">
+    <h2>More Shows</h2>
+    <div class="carousel-container">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
     </div>
   </section>
-
-  <!-- Content Carousel -->
-  <section class="content-carousel">
-    <h3>More Shows</h3>
-    <div class="carousel">
-      <img src="show1.jpg" alt="Show 1">
-      <img src="show2.jpg" alt="Show 2">
-      <img src="show3.jpg" alt="Show 3">
-      <img src="show4.jpg" alt="Show 4">
-      <img src="show5.jpg" alt="Show 5">
-    </div>
-  </section>
-
-  <script src="script.js"></script>
 </body>
 </html>
