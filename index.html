@@ -3,63 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One Piece Clone</title>
+  <title>TV Show Design</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo"> <i class="fa fa-diamond"></i> </div>
     <nav>
-      <ul class="nav-links">
-        <li>Home</li>
-        <li>TV Shows</li>
-        <li>Movies</li>
-        <li>Series</li>
-        <li>Upcoming</li>
-      </ul>
-      <div class="auth-buttons">
-        <button>Sign Up</button>
-        <button>Sign In</button>
-      </div>
+      <a href="#">Home</a>
+      <a href="#">TV Shows</a>
+      <a href="#">Movies</a>
+      <a href="#">Series</a>
+      <a href="#">Upcoming</a>
     </nav>
+    <div class="auth">
+      <select id="lang">
+        <option>English</option>
+        <option>Spanish</option>
+      </select>
+      <button class="btn">Sign Up</button>
+      <button class="btn">Sign In</button>
+    </div>
   </header>
 
-  <!-- Main Banner -->
-  <section class="banner">
-    <div class="banner-content">
-      <h1>One Piece</h1>
-      <p>With a straw hat and an eccentric crew, young pirate Monkey D. Luffy embarks on an epic voyage...</p>
-      <div class="buttons">
-        <button class="play">Play Now</button>
-        <button class="wishlist">+ My Wishlist</button>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="one-piece-logo.png" alt="One Piece Logo" class="hero-title">
+      <p class="rating">
+        <span>98% Likes</span> | 2023 | 16+ | Action, Adventure, TV Shows
+      </p>
+      <p class="description">
+        With a straw hat and an eccentric crew, young pirate Monkey D. Luffy embarks on an epic voyage in the live-action adaptation of this popular manga to search for treasure.
+      </p>
+      <div class="actions">
+        <button class="play-btn">▶ Play Now</button>
+        <button class="wishlist-btn">+ My Wishlist</button>
       </div>
-      <div class="stars">
-        <!-- Add profile images for stars here -->
-        <span>STARRING:</span>
-        <img src="profile1.jpg" alt="Star 1">
-        <img src="profile2.jpg" alt="Star 2">
-        <img src="profile3.jpg" alt="Star 3">
+      <div class="starring">
+        <p>STARRING:</p>
+        <div class="avatars">
+          <img src="avatar1.jpg" alt="actor">
+          <img src="avatar2.jpg" alt="actor">
+          <img src="avatar3.jpg" alt="actor">
+          <img src="avatar4.jpg" alt="actor">
+          <img src="avatar5.jpg" alt="actor">
+          <img src="avatar6.jpg" alt="actor">
+        </div>
       </div>
+    </div>
+    <div class="hero-img">
+      <img src="hero-banner.jpg" alt="One Piece Cast">
+      <div class="top-10">Top 10</div>
     </div>
   </section>
 
-  <!-- Episodes Section -->
+  <!-- Episode Carousel -->
   <section class="episodes">
-    <div class="episode-item">
-      <img src="thumbnail1.jpg" alt="Episode 1">
-      <p>ROMANCE DOWN</p>
-    </div>
-    <div class="episode-item">
-      <img src="thumbnail2.jpg" alt="Episode 2">
-      <p>MAN IN A STRAW HAT</p>
+    <h3>EPISODES:</h3>
+    <div class="carousel">
+      <div class="episode">
+        <img src="episode1.jpg" alt="Episode 1">
+        <p>ROMANCE DOWN</p>
+      </div>
+      <div class="episode">
+        <img src="episode2.jpg" alt="Episode 2">
+        <p>MAN IN A STRAW HAT</p>
+      </div>
+      <div class="episode">
+        <img src="episode3.jpg" alt="Episode 3">
+        <p>DON...</p>
+      </div>
     </div>
   </section>
 
-  <!-- Other Shows Section -->
-  <section class="other-shows">
-    <img src="show1.jpg" alt="Show 1">
-    <img src="show2.jpg" alt="Show 2">
-    <img src="show3.jpg" alt="Show 3">
+  <!-- Content Carousel -->
+  <section class="content-carousel">
+    <h3>More Shows</h3>
+    <div class="carousel">
+      <img src="show1.jpg" alt="Show 1">
+      <img src="show2.jpg" alt="Show 2">
+      <img src="show3.jpg" alt="Show 3">
+      <img src="show4.jpg" alt="Show 4">
+      <img src="show5.jpg" alt="Show 5">
+    </div>
   </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
