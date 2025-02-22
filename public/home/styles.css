@@ -1,0 +1,330 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+/* ---------- HERO / HEADER ---------- */
+.hero {
+  font-size: 1rem;
+  position: relative;
+  background: url('https://cnbl-cdn.bamgrid.com/assets/5c13a6f7ce649fd2c51a64baa26e291380b205efdbeca3674ad9ed36d0ff7905/original')
+    center/cover no-repeat;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Nav Bar */
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0); /* Slight overlay on top of hero */
+}
+
+.logo h1 {
+  font-size: 2.8rem;
+  font-weight: 1000;
+  color: #00ff7f; /* Cinexa brand color? Adjust as desired */
+}
+
+.nav-right .nav-link {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.nav-right .nav-link:hover {
+  color: #00ff7f;
+}
+
+/* Hero Content (Plan Cards) */
+.hero-content {
+  text-decoration: wavy;
+  margin-top: 100px; /* So it sits below the navbar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.plan-card {
+  text-size-adjust: 6rem;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 100px 50px;
+  border-radius: 50px;
+  text-align: center;
+  max-width: 500px;
+}
+
+.plan-card p {
+  margin-bottom: 10px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  text-decoration: none;
+  color: #000;
+  background-color: #00ff7f;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 6000;
+}
+
+.btn-secondary {
+  background-color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.terms {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.cinexa-only {
+  margin-top: 10px;
+}
+
+.cinexa-only-btn {
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+
+.cinexa-only-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* ---------- SELECT PLAN SECTION ---------- */
+.select-plan {
+  background-color: #111;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.select-plan h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.select-plan p {
+  margin-bottom: 10px;
+}
+
+.plan-selector {
+  margin: 20px 0;
+}
+
+.plan-btn {
+  background-color: #00ff7f;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin: 0 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.plan-btn:hover {
+  opacity: 0.8;
+}
+
+/* Plan Table */
+.plan-table {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.plan-row {
+  display: flex;
+  background-color: #222;
+  border-bottom: 1px solid #444;
+}
+
+.plan-head {
+  background-color: #333;
+}
+
+.plan-col {
+  flex: 1;
+  padding: 10px;
+  border-right: 1px solid #444;
+  text-align: center;
+}
+
+.plan-col:last-child {
+  border-right: none;
+}
+
+.plan-features {
+  list-style: disc;
+  text-align: left;
+  max-width: 700px;
+  margin: 20px auto;
+  padding-left: 40px;
+}
+
+/* ---------- ALL THE TV YOU LOVE SECTION ---------- */
+.all-tv {
+  background-color: #000;
+  padding: 100px 100px;
+  text-align: center;
+}
+
+.all-tv h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.all-tv p {
+  margin-bottom: 30px;
+}
+
+.tv-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tv-card {
+  background-color: #111;
+  border-radius: 6px;
+  width: 350px;
+  padding: 10px;
+  text-align: center;
+}
+
+.tv-card h3 {
+  margin-bottom: 10px;
+}
+
+.tv-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 40px 20px;
+  margin-top: 50px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.footer-column {
+  margin: 20px;
+  min-width: 150px;
+}
+
+.footer-column h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 8px;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.8rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content {
+    margin-top: 120px;
+  }
+  .plan-card {
+    max-width: 90%;
+  }
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-column {
+    margin: 10px 0;
+  }
+}

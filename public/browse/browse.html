@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinexa Plus - Browse</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">Cinexa Plus</div>
+        <div class="profile-container">
+            <img src="default-avatar.png" id="profilePic" class="profile-pic" alt="Profile">
+            <div id="profileDropdown" class="profile-menu">
+                <div id="profile-list"></div>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Cinexa Plus</h1>
+            <p>Enjoy the best movies and TV shows.</p>
+            <div class="hero-buttons">
+                <button class="watch-now">Watch Now</button>
+                <button class="more-info">More Info</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movie Sections -->
+    <section class="movies-section">
+        <h2>Trending</h2>
+        <div id="trendingMovies" class="movie-grid"></div>
+    </section>
+
+    <section class="movies-section">
+        <h2>New Releases</h2>
+        <div id="newReleases" class="movie-grid"></div>
+    </section>
+
+    <section class="movies-section">
+        <h2>Top Picks</h2>
+        <div id="topPicks" class="movie-grid"></div>
+    </section>
+
+    <!-- Video Player Overlay -->
+    <div id="videoOverlay" class="video-overlay">
+        <video id="video" controls></video>
+        <button id="closeVideo">Close</button>
+    </div>
+
+    <script>
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "YOUR_FIREBASE_API_KEY",
+            authDomain: "YOUR_FIREBASE_AUTH_DOMAIN",
+            projectId: "YOUR_FIREBASE_PROJECT_ID",
+            storageBucket: "YOUR_FIREBASE_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_FIREBASE_MESSAGING_SENDER_ID",
+            appId: "YOUR_FIREBASE_APP_ID"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        firebase.auth().onAuthStateChanged(async (user) => {
+            if (!user) {
+                console.warn("User is not logged in! Redirecting...");
+                window.location.href = "public/plans/plans.html";
+                return;
+            }
+
+            console.log("User logged in:", user.email);
+
+            try {
+                const docRef = db.collection("Users").doc(user.uid);
+                const docSnap = await docRef.get();
+
+                if (!docSnap.exists) {
+                    console.warn("No subscription record found! Redirecting...");
+                    window.location.href = "public/plans/plans.html";
+                    return;
+                }
+
+                const userData = docSnap.data();
+                console.log(" User data:", userData);
+
+                if (!userData.active) {
+                    console.warn("User is NOT an active subscriber! Redirecting...");
+                    window.location.href = "/public/plans/plans.html";
+                    return;
+                }
+
+                // If active, update profile picture
+                document.getElementById("profilePic").src = user.photoURL || "default-avatar.png";
+            } catch (error) {
+                console.error("Error checking subscription:", error);
+                window.location.href = "/public/plans/plans.html";
+            }
+        });
+
+        // Logout Function
+        document.getElementById("logout-btn").addEventListener("click", () => {
+            firebase.auth().signOut().then(() => {
+                window.location.href = "/public/login/login.html";
+            }).catch(error => {
+                console.error("Logout error:", error);
+            });
+        });
+    </script>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

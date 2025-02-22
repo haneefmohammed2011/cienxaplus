@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinexa Plus - Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Cinexa Plus</h1>
+        </div>
+    </header>
+    <main>
+        <div class="signup-container">
+            <h2>Create an Account</h2>
+            <form id="signup-form">
+                <div class="input-group">
+                    <input type="text" id="full-name" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="signup-btn">Sign Up</button>
+            </form>
+            <p class="login-link">Already have an account? <a href="/public/login/login.html">Log in</a></p>
+        </div>
+    </main>
+
+    <script type="module">
+        // 🔥 Import Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
+
+        // 🔥 Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBQ9cWKjfFAzBCOaD6weEI4SoHHnk3ULcY",
+            authDomain: "cinexa-plus.firebaseapp.com",
+            projectId: "cinexa-plus",
+            storageBucket: "cinexa-plus.appspot.com",
+            messagingSenderId: "568363600441",
+            appId: "1:568363600441:web:34396e502d5844a7865be8",
+            measurementId: "G-E9T72TN34C"
+        };
+
+        // 🔥 Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // 🚀 Handle Signup Form Submission
+        document.getElementById("signup-form").addEventListener("submit", async (event) => {
+            event.preventDefault(); // Prevent form refresh
+
+            const fullName = document.getElementById("full-name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            try {
+                // 🔑 Create User in Firebase Authentication
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                // ✉️ Send Email Verification
+                await sendEmailVerification(user);
+
+                // 📝 Store User Data in Firestore
+                await setDoc(doc(db, "users", user.uid), {
+                    fullName: fullName,
+                    email: email,
+                    uid: user.uid,
+                    createdAt: new Date(),
+                    emailVerified: false, // Initially false, will change after verification
+                    active: false,  // No active subscription yet
+                    plan: null       // No plan selected yet
+                });
+
+                alert("A verification email has been sent. Please check your inbox.");
+                window.location.href = "/public/login/login.html"; // Redirect to login after signup
+            } catch (error) {
+                alert("Signup failed: " + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

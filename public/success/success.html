@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Success</title>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+  <style>
+    body { text-align: center; font-family: Arial, sans-serif; }
+    .btn { padding: 10px; background: black; color: white; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to the Cinexa Plus Family!</h1>
+  <p>Your subscription is active. Start watching now!</p>
+  <button class="btn" onclick="window.location.href='/browse.html'">Start Watching</button>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const userId = urlParams.get('userId');
+    if (userId) {
+      fetch(`/activate-user?userId=${userId}`);
+    }
+  </script>
+
+</body>
+</html>

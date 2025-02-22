@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinexa Plus - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Cinexa Plus</h1>
+        </div>
+    </header>
+    <main>
+        <div class="login-container">
+            <h2>Welcome Back</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <p class="forgot-password"><a href="#">Forgot password?</a></p>
+            <p class="sign-up">Don't have an account? <a href="/public/signup/signup.html">Sign up</a></p>
+        </div>
+    </main>
+
+    <script type="module">
+        // 🔥 Import Firebase SDK (v9+ Modular)
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
+
+        // 🔥 Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBQ9cWKjfFAzBCOaD6weEI4SoHHnk3ULcY",
+            authDomain: "cinexa-plus.firebaseapp.com",
+            projectId: "cinexa-plus",
+            storageBucket: "cinexa-plus.appspot.com",  // Fixed incorrect domain
+            messagingSenderId: "568363600441",
+            appId: "1:568363600441:web:34396e502d5844a7865be8",
+            measurementId: "G-E9T72TN34C"
+        };
+
+        // 🔥 Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // 🚀 Login Form Handling
+        document.getElementById("login-form").addEventListener("submit", async (event) => {
+            event.preventDefault(); // Prevent page refresh
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            try {
+                // 🔑 Authenticate user
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                if (!user) {
+                    alert("Login failed. Please try again.");
+                    return;
+                }
+
+                // 🔍 Check Firestore for active subscription
+                const userDocRef = doc(db, "users", user.uid);
+                const userDoc = await getDoc(userDocRef);
+
+                if (userDoc.exists() && userDoc.data().active) {
+                    // ✅ User has an active subscription → Redirect to Browse Page
+                    window.location.href = "/public/browse/browse.html";
+                } else {
+                    // ❌ No active plan → Redirect to Plans Page
+                    window.location.href = "/public/plans/plans.html";
+                }
+            } catch (error) {
+                alert("Login failed: " + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
